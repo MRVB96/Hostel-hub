@@ -71,12 +71,22 @@ npm install
 ```
 
 ### 3. Configure Environment Variables
-Navigate to the `server` directory and create a file named `.env`. Add the following configuration:
+For security reasons, the actual `.env` file containing sensitive secrets is ignored by Git and is not included in this repository. You must create one manually.
+
+Navigate to the `server` directory. You will find a template file named `.env.example`. Create a copy of this file and rename the copy to `.env`:
+
+```bash
+cd server
+cp .env.example .env
+```
+
+The resulting `.env` file should look like this:
 ```env
 PORT=5000
 MONGO_URI=mongodb://127.0.0.1:27017/hostel_mgmt
 JWT_SECRET=your_super_secret_jwt_key_here
 ```
+> **Note:** The `MONGO_URI` provided here points to a local database on your own machine. It is safe to use this locally, but when deploying to production, replace it with your secured cloud database URI (e.g., MongoDB Atlas) and never share those credentials publicly.
 
 ### 4. Seed the Database
 To quickly test the application without having to manually register users from scratch, you can seed the database with default rooms and test accounts.
