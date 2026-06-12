@@ -83,8 +83,8 @@ cp .env.example .env
 The resulting `.env` file should look like this:
 ```env
 PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/hostel_mgmt
-JWT_SECRET=your_super_secret_jwt_key_here
+MONGO_URI=your_mongodb_uri_here
+JWT_SECRET=your_secret_key_here
 ```
 > **Note:** The `MONGO_URI` provided here points to a local database on your own machine. It is safe to use this locally, but when deploying to production, replace it with your secured cloud database URI (e.g., MongoDB Atlas) and never share those credentials publicly.
 
